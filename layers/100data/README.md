@@ -1,13 +1,13 @@
 ## Summary
 
-Terraform code to setup VPC layer.
+Terraform code to setup Data layer.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | aws\_account\_id | (Required) AWS Account ID. | string | n/a | yes |
-| region | (Required) Region where resources will be created. | string | `ap-southeast-1` | no |
+| region | (Required) Region where resources will be created. | string | `"ap-southeast-2"` | no |
 | environment | (Optional) The name of the environment, e.g. Production, Development, etc. | string | `"Development"` | no |
 | deletion\_window\_in\_days | Number of days before permanent removal. | number | `"30"` | no |
 | enable\_key\_rotation | KMS key rotation. | bool | `true` | no |
