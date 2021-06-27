@@ -12,6 +12,11 @@ output "public_subnets" {
 }
 
 output "vpc_id" {
-  description = "A list of public subnets inside the VPC."
+  description = "The ID of the VPC."
+  value       = module.vpc.vpc_id
+}
+
+output "vpc_cidr_block" {
+  description = "The CIDR block of the VPC."
   value       = module.vpc.vpc_id
 }
