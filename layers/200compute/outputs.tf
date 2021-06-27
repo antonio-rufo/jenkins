@@ -3,5 +3,5 @@
 ###############################################################################
 output "jenkins_url" {
   description = "Jenkins URL."
-  value       = aws_route53_record.alb.fqdn
+  value       = aws_route53_record.alb.*.fqdn
 }
