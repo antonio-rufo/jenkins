@@ -36,14 +36,17 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.65.0"
 
-  name = var.environment
+  name = "Jenkins VPC"
   cidr = "172.18.0.0/16"
 
-  azs             = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
-  private_subnets = ["172.18.0.0/19", "172.18.32.0/19", "172.18.64.0/19"]
-  public_subnets  = ["172.18.128.0/19", "172.18.160.0/19", "172.18.192.0/19"]
+  azs             = ["ap-southeast-2a", "ap-southeast-2b"]
+  private_subnets = ["172.18.0.0/19", "172.18.32.0/19"]
+  public_subnets  = ["172.18.128.0/19", "172.18.160.0/19"]
 
-  enable_nat_gateway   = true
-  enable_dns_hostnames = true
-  tags                 = local.tags
+  enable_nat_gateway     = true
+  enable_dns_hostnames   = true
+  single_nat_gateway     = true
+  one_nat_gateway_per_az = false
+
+  tags = local.tags
 }
